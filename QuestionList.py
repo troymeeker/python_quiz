@@ -23,7 +23,12 @@ def run_test(questions):
         if answer == q.answer:
             score +=1 
 
-    print("You got " + str(score) + "/" + str(len(questions)) + " questions correct! Great Job!")            
+    if int(score) == 0:
+        print("You got " + str(score) + "/" + str(len(questions)) + " questions correct! Try again")
+    elif int(score) < 3:
+        print("You got " + str(score) + "/" + str(len(questions)) + " questions correct! You did Okay, Study up!")
+    else:
+        print("You got " + str(score) + "/" + str(len(questions)) + " questions correct! Great Job!")            
 
 
 run_test(questions)
