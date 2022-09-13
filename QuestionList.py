@@ -6,7 +6,7 @@ questions = {
     "What is the least populated state in the US":
         ["Wyoming", "Alaska", "Montana", "Hawaii"],
     "Who is the oldest active player in the NFL":
-        ["Tom Brady", "John Elway", "Joe Burrow", "Adam Vinatieri", "Aaron Rodgers"],
+        ["Tom Brady", "John Elway", "Adam Vinatieri", "Aaron Rodgers"],
     "Who was the youngest President of the United States":
         ["Theodore Roosevelt", "Barack Obama", "Abraham Lincoln", "George W Bush"],
 
