@@ -1,6 +1,9 @@
+import random
 from string import ascii_lowercase
 
-questions = {
+NUM_QUESTIONS_PER_QUIZ = 5  
+
+QUESTIONS = {
     "What is the 2nd tallest Mountain in the world":
         ["K2", "Kilimanjaro", "Denali", "Mt Hood"],
     "What is the least populated state in the US":
@@ -12,19 +15,26 @@ questions = {
 
 }
 
+num_questions = min(NUM_QUESTIONS_PER_QUIZ, len(QUESTIONS))
+questions = random.sample(list(QUESTIONS.items()), k=num_questions)
+
 score = 0
-for num, (question, answers) in enumerate(questions.items(), start=1):
+for num, (question, answers) in enumerate(questions, start=1):
     print(f"\nQuestion {num}:")
     print(f"{question}?")
     correct = answers[0]
     
-    labeled_answers = dict(zip(ascii_lowercase, sorted(answers)))
-    # sorted_answers = sorted(answers)
+    labeled_answers = dict(
+        zip(ascii_lowercase, random.sample(answers, k=len(answers)))
+    )
+   
     for label, answer in labeled_answers.items():
         print(f" {label}) {answer}")
 
-    answer_label = input("\nChoice? ")
-    answer = labeled_answers.get(answer_label)
+    while (answer_label := input("\nChoice? ")) not in labeled_answers:
+        print(f"Please answer one of {', '.join(labeled_answers)}")    
+    
+    answer = labeled_answers[answer_label]
     if answer == correct:
         score += 1
         print(" Correct! ")
