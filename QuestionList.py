@@ -15,11 +15,6 @@ QUESTIONS = {
 
 }
 
-# explanations = {
-#     'fruits': ['1', '2', '3', '4']
-# }
-# explanation = explanations['fruits'][QUESTIONS]
-
 num_questions = min(NUM_QUESTIONS_PER_QUIZ, len(QUESTIONS))
 questions = random.sample(list(QUESTIONS.items()), k=num_questions)
 
@@ -43,7 +38,7 @@ for num, (question, answers) in enumerate(questions, start=1):
     if answer == correct:
         score += 1
         print(" Correct! ")
-        # print(explanation)
+        # print( str(score) + "/" + str(len(questions)))
         
     else:
         print(f"The correct answer is {correct!r}, not {answer!r} ")
