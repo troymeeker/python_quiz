@@ -44,7 +44,7 @@ for num, (question, answers) in enumerate(questions, start=1):
         print(f"The correct answer is {correct!r}, not {answer!r} ")
 
 if int(score) == 0:
-    print("You got " + str(score) + "/" + str(len(questions)) + " questions correct! Try again")
+    print("You got " + str(score) + "/" + str(len(questions)) + " questions correct! Better luck next time!")
 elif int(score) < 3:
     print("You got " + str(score) + "/" + str(len(questions)) + " questions correct! You did Okay, Study up!")
 else:
